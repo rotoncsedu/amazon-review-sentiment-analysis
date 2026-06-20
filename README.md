@@ -29,60 +29,65 @@ This project develops a machine learning model to predict the review sentiment b
 
 ## Exploratory Data Analysis (EDA)
 #### Key Findings
-Top Positive Features:
-       Feature  Coefficient
-11225     love     8.695423
-8443     great     8.376000
-6092      easy     5.328070
-7800       fun     4.734022
-2122   awesome     4.704640
-2518      best     4.639550
-20737    works     4.385290
-12445     nice     3.233517
-1327   amazing     2.969659
-3272       can     2.928717
+## Top Positive Features
 
-Top Negative Features:
-           Feature  Coefficient
-12603          not    -7.240488
-20239        waste    -5.482707
-5126       deleted    -4.700820
-19536  uninstalled    -4.395276
-17799        sucks    -4.132285
-2823        boring    -4.032898
-17702       stupid    -3.963142
-19778      useless    -3.671020
-5742          dont    -3.584042
-20776        worst    -3.561058
+| Rank | Feature | Coefficient |
+|------|---------|------------:|
+| 1 | love | 8.695 |
+| 2 | great | 8.376 |
+| 3 | easy | 5.328 |
+| 4 | fun | 4.734 |
+| 5 | awesome | 4.705 |
+| 6 | best | 4.640 |
+| 7 | works | 4.385 |
+| 8 | nice | 3.234 |
+| 9 | amazing | 2.970 |
+| 10 | can | 2.929 |
+
+## Top Negative Features
+
+| Rank | Feature | Coefficient |
+|------|---------|------------:|
+| 1 | not | -7.240 |
+| 2 | waste | -5.483 |
+| 3 | deleted | -4.701 |
+| 4 | uninstalled | -4.395 |
+| 5 | sucks | -4.132 |
+| 6 | boring | -4.033 |
+| 7 | stupid | -3.963 |
+| 8 | useless | -3.671 |
+| 9 | dont | -3.584 |
+| 10 | worst | -3.561 |
 
 ## Model Comparison
 
-Naive Bayes Accuracy: 0.8333
 
-Classification Report of Naive Bayes:
-              precision    recall  f1-score   support
+| Model | Accuracy | Negative Precision | Negative Recall | Negative F1 | Positive Precision | Positive Recall | Positive F1 |
+|---------|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
+| Naive Bayes | 0.8333 | 0.93 | 0.33 | 0.48 | 0.82 | 0.99 | 0.90 |
+| Logistic Regression | **0.8918** | 0.86 | 0.65 | 0.74 | 0.90 | 0.97 | 0.93 |
 
-    Negative       0.93      0.33      0.48       958
-    Positive       0.82      0.99      0.90      3042
 
-    accuracy                           0.83      4000
-   macro avg       0.88      0.66      0.69      4000
-weighted avg       0.85      0.83      0.80      4000
 
-Logistic Regression Accuracy: 0.8918
+## Key Findings
 
-Classification Report of Logistic Regression:
-              precision    recall  f1-score   support
-
-    Negative       0.86      0.65      0.74       958
-    Positive       0.90      0.97      0.93      3042
-
-    accuracy                           0.89      4000
-   macro avg       0.88      0.81      0.84      4000
-weighted avg       0.89      0.89      0.89      4000
+- Logistic Regression outperformed Naive Bayes with an accuracy of **89.18%** compared to **83.33%**.
+- Logistic Regression achieved significantly better performance on the **Negative** class, increasing recall from **0.33** to **0.65**.
+- Naive Bayes showed very high recall (**0.99**) for Positive reviews but struggled to identify Negative reviews correctly.
+- Logistic Regression provided a more balanced performance across both sentiment classes.
+- The higher F1-scores achieved by Logistic Regression indicate better overall classification capability.
+- Based on accuracy, recall, and F1-score, **Logistic Regression was selected as the final model**.
 
 
 ## 🏆 Best Model
+
+| Metric | Value |
+|---------|---------|
+| Model | Logistic Regression |
+| Accuracy | **0.8918** |
+| Negative Class F1-Score | **0.74** |
+| Positive Class F1-Score | **0.93** |
+
 After evaluating two machine learning algorithms, **Logistic Regression** was selected as the best-performing model.<br>
 
 
@@ -129,7 +134,7 @@ The project includes a Gradio interface where users can:<br>
 
 #### Gradio Interface
 
-![Gradio Interface](screenshots/gradio_interface.png)
+![Gradio Interface](Screenshots/gradio_interface.png)
 
 
 ## Installation
