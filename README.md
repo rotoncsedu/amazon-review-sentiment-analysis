@@ -1,4 +1,4 @@
-## Amazon Review Classification App
+## Amazon Product Review Classification App
 
 #### Project Overview: 
 This project develops a machine learning model to predict the review sentiment based on previous review sentiment.
